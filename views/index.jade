@@ -1,4 +1,21 @@
 extends layout
 
 block content
-  img(src=image.url)
+  img(src=image.url, class='main')
+
+  p.main-bar
+    span.permalink [ permalink ]
+    input.permalink-hidden(value=image.url)
+    span.like 59%
+    |  |
+    span.dislike  41%
+    span.vote up | down
+  p.add-image
+    h2 Have a GIF you want listed?
+    form(action="/add", method="POST")
+      p
+        input.useremail(type="email", placeholder="Your Email Address")
+      p
+        input.imageurl(type="text", placeholder="A URL to the GIF you want added")
+      p
+        input(type="submit")

@@ -3,14 +3,21 @@ html
   head
     title= title
     link(rel='stylesheet', href='/style.css')
+    link(href='http://fonts.googleapis.com/css?family=Open+Sans', rel='stylesheet', type='text/css')
   body
-    h1 Crippl.es
-    if message
-      h3 message
-    block content
+        #page-wrap
+          if message
+            h2= message
 
-    h3 Add your own GIF
-    form(method='post',action='/add')
-      input(type='text',name='imageurl', placeholder="Url to gif")
-      input(type='email',name='useremail', placeholder="Your email")
-      input(type='submit',name='submit',value='Submit')
+          block content
+
+script(src='http://code.jquery.com/jquery-1.11.0.min.js')
+
+script
+  $(".permalink").click(function () {
+  $(this).fadeOut("slow", function () {
+  $(".permalink-hidden").fadeIn("slow", function () {
+  });
+  $(".permalink-hidden").focus();
+  });
+  });

@@ -1,6 +1,6 @@
 var db = require("./models"),
-    _ = require("lodash"),
-    Image = db.Image;
+    _  = require("lodash"),
+ Image = db.Image;
 
 exports.index = function(req, res) {
   Image.randomImage().success(function(i) {

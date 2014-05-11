@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+  <head>
+    <style>
+      body {
+        background: #0f0f0f;
+        text-align: center;
+
+        color: #99a;
+
+        font-family: "Open Sans", sans-serif;
+      }
+
+      #page-wrap {
+        display: inline-block;
+
+        max-width: 100%;
+      }
+
+      .main {
+        margin-top: 10px;
+
+        max-width: 100%;
+        max-height: 90%;
+      }
+
+      .main-bar {
+        font-size: 20px;
+      }
+
+      .copied {
+        display: none;
+
+        float: left;
+        font-size: 20px;
+      }
+
+      .copied-text {
+        padding-left: 11px;
+        padding-right: 11px;
+      }
+
+      .permalink {
+        float: left;
+
+        cursor: pointer;
+      }
+
+      .permalink-hidden {
+        display: none;
+
+        float: left;
+
+        height: 20px;
+        min-width: 120px;
+
+        font-size: 10px;
+      }
+
+      .vote {
+        float: right;
+      }
+
+      .like {
+        color: green;
+      }
+
+      .dislike {
+        color: red;
+      }
+    </style>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <div id="page-wrap">
+      <img class="main" src="http://media0.giphy.com/media/qov5lQkvYAMak/giphy.gif" />
+      <p class="main-bar">
+        <span class="permalink">[ permalink ]</span>
+        <input class="permalink-hidden" value="http://crippl.es/a23KsfI" />
+        <span class="like">59%</span> | <span class="dislike">41%</span>
+        <span class="vote">up | down </span>
+      </p>
+      <span class="copied">[ <span class="copied-text">Copied!</span> ]</span>
+    </div>
+  </body>
+  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src="http://steamdev.com/zclip/js/jquery.zclip.min.js"></script>
+  <script>
+  $(".permalink").click(function () {
+    $(this).fadeOut("slow", function () {
+      $(".permalink-hidden").fadeIn("slow", function () {
+      });
+      $(".permalink-hidden").focus();
+    });
+
+    $(".copied").fadeIn("fast");
+
+    $('.permalink').zclip({
+    path:'http://www.steamdev.com/zclip/js/ZeroClipboard.swf',
+    copy:function(){return $('input#permalink-hidden').val();}
+    });
+  });
+  </script>
+</html>
