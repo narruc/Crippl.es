@@ -1,0 +1,16 @@
+{
+  "development": {
+    "username": "",
+    "password": null,
+    "database": "criples_development",
+    "dialect": "sqlite",
+    "storage": "main.db"
+  },
+  "production": {
+    "username": "",
+    "password": null,
+    "database": "criples_production",
+    "dialect": "sqlite",
+    "storage": "main.db"
+  }
+}

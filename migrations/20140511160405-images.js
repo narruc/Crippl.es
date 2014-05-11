@@ -14,9 +14,9 @@ module.exports = {
         updatedAt: {
           type: DataTypes.DATE
         },
-        url: DataTypes.STRING,
-        status: DataTypes.INTEGER,
-        userEmail: DataTypes.STRING
+        url: DataTypes.TEXT,
+        status: {type: DataTypes.INTEGER, defaultValue: 0},
+        userEmail: DataTypes.TEXT
         // attr3: {
         //   type: DataTypes.BOOLEAN,
         //   defaultValue: false,

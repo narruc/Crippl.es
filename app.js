@@ -33,6 +33,7 @@ if ('development' === app.get('env')) {
 }
  
 app.get('/', routes.index);
+app.post('/add', routes.add);
  
 db.sequelize.sync({ force: false }).complete(function(err) {
   if (err) {

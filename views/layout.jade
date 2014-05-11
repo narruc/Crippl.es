@@ -1,0 +1,16 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/style.css')
+  body
+    h1 Crippl.es
+    if message
+      h3 message
+    block content
+
+    h3 Add your own GIF
+    form(method='post',action='/add')
+      input(type='text',name='imageurl', placeholder="Url to gif")
+      input(type='email',name='useremail', placeholder="Your email")
+      input(type='submit',name='submit',value='Submit')
