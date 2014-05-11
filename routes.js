@@ -14,8 +14,8 @@ exports.index = function(req, res) {
 
 exports.add = function(req, res) {
   var i = Image.build({
-    userEmail: req.param('useremail'),
-    url: req.param('imageurl'),
+    userEmail: req.body.useremail,
+    url: req.body.imageurl,
     status: 1 // For the moment, just set to accepted
   });
   i.save().success(function(i) {

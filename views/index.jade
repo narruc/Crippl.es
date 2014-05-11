@@ -6,12 +6,13 @@ block content
   p.main-bar
     span.permalink [ permalink ]
     input.permalink-hidden(value=image.url)
+  br
   p.add-image
     h2 Have a GIF you want listed?
     form(action="/add", method="POST")
       p
-        input.useremail(type="email", placeholder="Your Email Address")
+        input.useremail(type="email", placeholder="Your Email Address", name="useremail")
       p
-        input.imageurl(type="text", placeholder="A URL to the GIF you want added")
+        input.imageurl(type="text", placeholder="A URL to the GIF you want added", name="imageurl")
       p
         input(type="submit")
