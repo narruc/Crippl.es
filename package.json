@@ -11,5 +11,10 @@
     "url": "https://github.com/narruc/Crippl.es"
   },
   "author": "Shane Curran",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "sequelize": "~1.7.5",
+    "sqlite3": "~2.2.3",
+    "jade": "~1.3.1"
+  }
 }
